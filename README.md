@@ -1,8 +1,8 @@
 Features:
         Add Students,
         Search Students,
-        Delete Student Info
-        Update Student Info 
+        Delete Student Info,
+        Update Student Info,
         List all Students.
 
 Student Database Management System User Guide:
