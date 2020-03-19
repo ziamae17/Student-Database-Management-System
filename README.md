@@ -1,12 +1,11 @@
-Student Database Management System User Guide:
-
 Features:
-Add Students
-Search Students
-Delete Student Info
-Update Student Info 
-List all Students.
+        Add Students,
+        Search Students,
+        Delete Student Info
+        Update Student Info 
+        List all Students.
 
+Student Database Management System User Guide:
 
 1.	Run SDMS Login.py file
 2.	Login Page. Input User ID and Password.
