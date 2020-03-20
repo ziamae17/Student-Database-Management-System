@@ -2,22 +2,13 @@ import csv
 import sys
 import tkinter
 import tkinter.messagebox
+import sqlite3,sys
 
 try:
     import Tkinter as tk
 except ImportError:
     import tkinter as tk
 
-try:
-    import ttk
-    py3 = False
-except ImportError:
-    import tkinter.ttk as ttk
-    py3 = True
-
-#import GUI_support
-            
-            
     
 class studentsProf():
     def __init__(self,ID,FirstName,LastName,Course,YearLevel):
@@ -37,6 +28,13 @@ class data():
         self.read_from_file()
         self.list_students = [*self.students]
 
+    def connection():
+        try:
+            conn=sqlite3.connect("student.db")
+        except:
+            print("cannot connect to the database")
+        return conn 
+
     def read_from_file(self):
         with open('Students.csv',newline='') as inf:
             info=csv.reader(inf,delimiter=',')
@@ -45,47 +43,35 @@ class data():
             print(self.students)
 
     def write_to_file(self):
-        with open('Students.csv','w',newline='') as deyta:
-            deita=csv.writer(deyta,delimiter=',')
+        with open('Students.csv','w',newline='') as data:
+            result=csv.writer(data,delimiter=',')
             for a in self.students:
-                deita.writerow([a.ID]+[a.FirstName]+[a.LastName]+[a.Course]+[a.YearLevel])
+                result.writerow([a.ID]+[a.FirstName]+[a.LastName]+[a.Course]+[a.YearLevel])
         
                 
 
 def vp_start_gui():
-    '''Starting point when module is the main routine.'''
     global val, w, root, top
     root = tk.Tk()
-    #GUI_support.set_Tk_var()
     top = Toplevel1 (root)
-    #GUI_support.init(root, top)
     root.mainloop()
 
 w = None
 def create_Toplevel1(rt, *args, **kwargs):
-    '''Starting point when module is imported by another module.
-       Correct form of call: 'create_Toplevel1(root, *args, **kwargs)' .'''
     global w, w_win, root
-    #rt = root
     root = rt
     w = tk.Toplevel (root)
-    #GUI_support.set_Tk_var()
     top = Toplevel1 (w)
-    #GUI_support.init(w, top, *args, **kwargs)
     return (w, top)
 
 def destroy_Toplevel1():
     global w
     w.destroy()
     w = tk.Toplevel (root)
-    #w = None
-
 
 class Toplevel1:
        
     def __init__(self, top=None):
-        '''This class configures and populates the toplevel window.
-           top is the toplevel containing window.'''
         _bgcolor = '#d9d9d9'  # X11 color: 'gray85'
         _fgcolor = '#000000'  # X11 color: 'black'
         _compcolor = '#d9d9d9' # X11 color: 'gray85'
@@ -423,7 +409,7 @@ class Toplevel1:
 
 
     @staticmethod
-    def popup1(event, *args, **kwargs):
+    def popup1(event):
         Popupmenu1 = tk.Menu(root, tearoff=0)
         Popupmenu1.configure(activebackground="#f9f9f9")
         Popupmenu1.configure(activeborderwidth="1")
@@ -436,7 +422,7 @@ class Toplevel1:
         Popupmenu1.post(event.x_root, event.y_root)
 
     @staticmethod
-    def popup2(event, *args, **kwargs):
+    def popup2(event):
         Popupmenu2 = tk.Menu(root, tearoff=0)
         Popupmenu2.configure(activebackground="#f9f9f9")
         Popupmenu2.configure(activeborderwidth="1")
@@ -449,7 +435,7 @@ class Toplevel1:
         Popupmenu2.post(event.x_root, event.y_root)
 
     @staticmethod
-    def popup3(event, *args, **kwargs):
+    def popup3(event):
         Popupmenu3 = tk.Menu(root, tearoff=0)
         Popupmenu3.configure(activebackground="#f9f9f9")
         Popupmenu3.configure(activeborderwidth="1")
@@ -462,7 +448,7 @@ class Toplevel1:
         Popupmenu3.post(event.x_root, event.y_root)
 
     @staticmethod
-    def popup4(event, *args, **kwargs):
+    def popup4(event):
         Popupmenu4 = tk.Menu(root, tearoff=0)
         Popupmenu4.configure(activebackground="#f9f9f9")
         Popupmenu4.configure(activeborderwidth="1")
@@ -475,7 +461,7 @@ class Toplevel1:
         Popupmenu4.post(event.x_root, event.y_root)
 
     @staticmethod
-    def popup5(event, *args, **kwargs):
+    def popup5(event):
         Popupmenu5 = tk.Menu(root, tearoff=0)
         Popupmenu5.configure(activebackground="#f9f9f9")
         Popupmenu5.configure(activeborderwidth="1")
@@ -547,7 +533,6 @@ def search(event):
     for i in Csv.list_students:
             top.Listbox1.insert("end", i.ID+" "+i.FirstName+" "+i.LastName+" "+i.Course+" "+i.YearLevel)
     
-#if __name__ == '__main__':
 Csv = data()
 vp_start_gui()
 
