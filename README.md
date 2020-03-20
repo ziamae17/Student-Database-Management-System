@@ -27,7 +27,7 @@ Student Database Management System User Guide:
 ![3 (2)](https://user-images.githubusercontent.com/60618940/76227428-43113000-625a-11ea-8965-52a5b86ca40e.png)
 
 5.	To ‘Update Student Info’. First, select a student that you want to update and then Click ‘Update Student Info’ Button. 
-    Student Info will appear and then you and change anything you want with his/her info. Then Click ‘Confirm’ Button 
+    Student Info will appear and then you can change anything you want with his/her info. Then Click ‘Confirm’ Button 
     if you had already changed it or Click ‘Cancel’ Button to cancel changes.
 
 ![4](https://user-images.githubusercontent.com/60618940/76227608-866b9e80-625a-11ea-9f83-3c397f4efdcb.png)
