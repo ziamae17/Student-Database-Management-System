@@ -1,5 +1,4 @@
-About:  A simple student database management system that will help you manage to your students information. 
- 	It is written in python 3.8.0
+About:  A simple student database management system that will help you manage to your students information. It is written in python 3.8.0
 
 Features:
         Add Students,
