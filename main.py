@@ -2,7 +2,6 @@ import csv
 import sys
 import tkinter
 import tkinter.messagebox
-import sqlite3,sys
 
 try:
     import Tkinter as tk
