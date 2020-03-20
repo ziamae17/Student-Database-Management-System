@@ -1,40 +1,25 @@
-import getpass
 import sys
 import tkinter
 import tkinter.messagebox
+
 
 try:
     import Tkinter as tk
 except ImportError:
     import tkinter as tk
 
-try:
-    import ttk
-    py3 = False
-except ImportError:
-    import tkinter.ttk as ttk
-    py3 = True
-
-#import unknown_support
-
 def vp_start_gui():
-    '''Starting point when module is the main routine.'''
     global val, w, root
     root = tk.Tk()
     top = Toplevel1 (root)
-    #unknown_support.init(root, top)
     root.mainloop()
 
 w = None
 def create_Toplevel1(rt, *args, **kwargs):
-    '''Starting point when module is imported by another module.
-       Correct form of call: 'create_Toplevel1(root, *args, **kwargs)' .'''
     global w, w_win, root
-    #rt = root
     root = rt
     w = tk.Toplevel (root)
     top = Toplevel1 (w)
-    #unknown_support.init(w, top, *args, **kwargs)
     return (w, top)
 
 def destroy_Toplevel1():
