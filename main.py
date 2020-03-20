@@ -27,13 +27,6 @@ class data():
         self.read_from_file()
         self.list_students = [*self.students]
 
-    def connection():
-        try:
-            conn=sqlite3.connect("student.db")
-        except:
-            print("cannot connect to the database")
-        return conn 
-
     def read_from_file(self):
         with open('Students.csv',newline='') as inf:
             info=csv.reader(inf,delimiter=',')
