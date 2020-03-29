@@ -1,5 +1,7 @@
 About:  A simple student database management system that will help you manage to your students information. It is written in python 3.8.0
 
+Requirements:Python 3.7 and Tkinter package
+        
 Features:
         Add Students,
         Search Students,
